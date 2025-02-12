@@ -38,6 +38,7 @@ calculator.get("/reset", (c) => {
 });
 
 calculator.get("/crash", (c) => {
+  console.log("Server is crashing...");
   process.exit(1);
 });
 
