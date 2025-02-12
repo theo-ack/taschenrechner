@@ -36,3 +36,18 @@ calculator.get("/reset", (c) => {
     result: state,
   });
 });
+
+calculator.get("/crash", (c) => {
+  process.exit(1);
+});
+
+calculator.get("/stress", (c) => {
+  setTimeout(stressCpu, 1000);
+  return c.json({ message: "CPU Stress Test started" });
+});
+
+function stressCpu() {
+  while (true) {
+    Math.sqrt(Math.random());
+  }
+}
