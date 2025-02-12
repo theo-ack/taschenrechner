@@ -42,7 +42,7 @@ calculator.get("/crash", (c) => {
 });
 
 calculator.get("/stress", (c) => {
-  setTimeout(stressCpu, 1000);
+  stressCpu();
   return c.json({ message: "CPU Stress Test started" });
 });
 
